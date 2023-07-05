@@ -21,9 +21,16 @@ function generatePassword() {
   var length = prompt("Enter the lenght of the password (between 8 and 128 characters):");
   length = parseInt(length);
   
-// Determines lenght parameters
+  // Determines lenght parameters
   if (isNaN(length) || length < 8 || length > 128) {
     alert("Invalid password length. Please enter a number between 8 and 128.");
     return "";
   }
+
+  // Prompt for types of character
+  var includeLowercase = confirm("Include lowercase characters?");
+  var includeUppercase = confirm("Include uppercase characters?");
+  var includeNumeric = confirm("Include numeric characters?");
+  var includeSpecialChars = confirm("Include special characters?");
 }
+
