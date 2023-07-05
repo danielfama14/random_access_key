@@ -39,11 +39,35 @@ function generatePassword() {
     return "";
   }
 
-  // Determine characters for each type/variable
+  // Determine characters for each type/variable set
   var lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
   var uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var numericChars = "0123456789";
   var specialChars = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
+
+// links selected character sets
+var selectedChars = "";
+if (includeLowercase) {
+  selectedChars += lowercaseChars;
+}
+if (includeUppercase) {
+  selectedChars += uppercaseChars;
+}
+if (includeNumeric) {
+  selectedChars += numericChars;
+}
+if (includeSpecialChars) {
+  selectedChars += specialChars;
+}
+
+// Generates random password
+var password = "";
+for (var i = 0; i < length; i++) {
+  var randomIndex = Math.floor(Math.random() * selectedChars.length);
+  password += selectedChars[randomIndex];
+}
+
+return password;
 }
 
 
