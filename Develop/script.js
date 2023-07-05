@@ -32,5 +32,18 @@ function generatePassword() {
   var includeUppercase = confirm("Include uppercase characters?");
   var includeNumeric = confirm("Include numeric characters?");
   var includeSpecialChars = confirm("Include special characters?");
+
+  // Determines that at least one of each type of character is used
+  if (!includeLowercase && !includeUppercase && !includeNumeric && !includeSpecialChars) {
+    alert("You must select at least one character type.");
+    return "";
+  }
+
+  // Determine characters for each type/variable
+  var lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+  var uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var numericChars = "0123456789";
+  var specialChars = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
 }
+
 
