@@ -1,4 +1,4 @@
-// Assignment code here
+// Assignment code goes here
 
 
 // Get references to the #generate element
